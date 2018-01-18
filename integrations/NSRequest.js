@@ -6,7 +6,7 @@ module.exports = function(data, url) {
         url: url,
         method: "POST",
         headers: {
-            'Authorization': 'NLAuth nlauth_account=3860489_SB2, nlauth_email=restuser@lumeris.com, nlauth_signature=r5;Nvcbu',
+            'Authorization': 'NLAuth nlauth_account={NS Account #}, nlauth_email= {restuser@netsuite.com}, nlauth_signature={password}',
             'content-type': 'application/json'
         },
         json: true,
