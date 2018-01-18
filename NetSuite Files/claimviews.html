@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>  </title>
+<!-- Latest compiled and minified CSS --> <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" >
+<script src="https://code.jquery.com/jquery-1.11.1.min.js"></script> 
+<!-- Latest compiled and minified JavaScript --> <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" ></script>
+<script src="https://cdn.datatables.net/1.10.4/js/jquery.dataTables.min.js"></script>
+<script src="https://cdn.datatables.net/plug-ins/9dcbecd42ad/integration/jqueryui/dataTables.jqueryui.js">
+</script>
+<!-- <link rel="stylesheet" href="https://code.jquery.com/ui/1.10.3/themes/Flick/jquery-ui.css"> -->
+<link rel="stylesheet" href="https://cdn.datatables.net/plug-ins/9dcbecd42ad/integration/jqueryui/dataTables.jqueryui.css">
+<script>
+$(document).ready(function() {
+
+    //alert(${ds.memberid});
+
+  $('#example').DataTable({
+  	 ajax: {
+        url: "https://webdevbootcamp-bluedemonz.c9users.io/claims?memberid=3401",
+        //   type: 'GET',
+        dataSrc: "recordset"
+    },    
+    columns: [ 
+        { data : "CLCL_ID" },
+        { data : "CLCL_CUR_STS" },
+        { data : "CLCL_INPUT_DT" },
+        { data : "CLCL_TOT_CHG" },
+        { data : "CLCL_TOT_PAYABLE" },        
+        { data : "CLCL_PAID_DT" },        
+        // { data : "CLST_SEQ_NO" }
+   ]    	 
+  });
+
+
+//  $("table").removeClass("dataTable");
+//  $("#example").addClass("table table-bordered table-hover table-striped");
+//   document.getElementById("example").deleteTFoot();
+
+} );
+</script>
+<!-- <style>
+ thead {
+    background-color:#F8F8FF;
+    color:black;
+ }
+ tfoot {
+    background-color:pink;
+    color:black;
+ }
+ td {
+    background-color:white;
+    color:black;
+ }th {
+	margin: 0; white-space:nowrap;
+}
+
+</style> -->
+
+</head>
+<body>
+
+<table id="example" class="display" cellspacing="0" width="100%">  
+
+   <thead>
+            <tr>
+                <th>Claim ID</th>
+                <th>Claim Status</th>
+                <th>Begin Date</th>
+                <th>Charges</th>
+                <th>Paid Amt.</th>
+                <th>Paid Date</th>
+            </tr>
+        </thead>
+
+</table>
+
+</body>
+</html>
